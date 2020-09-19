@@ -25,6 +25,7 @@ public class ExpressionParser<T> implements Parser<T> {
             this.operation = operation;
         }
 
+        @Override
         public T evaluate(T x, T y, T z) throws OverflowException, DivisionByZeroException {
             return operation.perform(firstOperand.evaluate(x, y, z), secondOperand.evaluate(x, y, z));
         }
@@ -41,6 +42,7 @@ public class ExpressionParser<T> implements Parser<T> {
             this.operation = operation;
         }
 
+        @Override
         public T evaluate(T x, T y, T z) throws OverflowException, DivisionByZeroException {
             return operation.perform(firstOperand.evaluate(x, y, z));
         }
